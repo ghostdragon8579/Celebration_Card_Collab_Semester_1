@@ -1,7 +1,7 @@
 //Global Variables
 int appWidth, appHeight;
 float xRectBackround, yRectBackround, widthRectBackround, heightRectBackround;
-float xRect2, yRect2, widthRect2, heightRect2;
+float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 void setup() {
   //Print & Println
   println("Hello World");
@@ -19,15 +19,15 @@ void setup() {
   yRectBackround = appHeight*0;
   widthRectBackround = appWidth-1;
   heightRectBackround = appHeight-1;
-  xRect2 = appWidth*1/4;
-  yRect2 = appHeight*1/4;
-  widthRect2 = appWidth*1/2;
-  heightRect2 = appHeight*1/2;
+  xRectQuit = appWidth*1/4;
+  yRectQuit = appHeight*1/4;
+  widthRectQuit = appWidth*1/2;
+  heightRectQuit = appHeight*1/2;
 } //End setup
 //
 void draw() {
   rect(xRectBackround, yRectBackround, widthRectBackround, heightRectBackround);
-  rect(xRect2, yRect2, widthRect2, heightRect2);
+  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
 } //End draw
 //
 void keyPressed() {
@@ -38,7 +38,7 @@ void mousePressed() {
   println("Mouse X: ", mouseX, "Mouse Y: ", mouseY);
   //
   //xRect2, yRect2, widthRect2, heightRect2
-  if ( mouseX>xRect2 && mouseX<xRect2+widthRect2 && mouseY>yRect2 && mouseY<yRect2+heightRect2 )   println("Button Activated");
+  if ( mouseX>xRectQuit && mouseX<xRectQuit+widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+heightRectQuit ) exit();
   //
 } //End mousePressed
 //
