@@ -2,6 +2,10 @@
 int appWidth, appHeight;
 float xRectBackround, yRectBackround, widthRectBackround, heightRectBackround;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
+float xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction;
+float xRectreturn, yRectreturn, widthRectreturn, heightRectreturn;
+float xRectphrase, yRectphrase, widthRectphrase, heightRectphrase;
+float xRectinitials, yRectinitials, widthRectinitials, heightRectinitials;
 void setup() {
   //Print & Println
   println("Hello World");
@@ -23,11 +27,17 @@ void setup() {
   yRectQuit = appHeight*1/4;
   widthRectQuit = appWidth*1/2;
   heightRectQuit = appHeight*1/2;
-} //End setup
 //
-void draw() {
   rect(xRectBackround, yRectBackround, widthRectBackround, heightRectBackround);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  rect(xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
+  rect(xRectreturn, yRectreturn, widthRectreturn, heightRectreturn);
+  rect(xRectphrase, yRectphrase, widthRectphrase, heightRectphrase);
+  rect(xRectinitials, yRectinitials, widthRectinitials, heightRectinitials);
+  } //End setup
+  //
+void draw() {
+  //
 } //End draw
 //
 void keyPressed() {
