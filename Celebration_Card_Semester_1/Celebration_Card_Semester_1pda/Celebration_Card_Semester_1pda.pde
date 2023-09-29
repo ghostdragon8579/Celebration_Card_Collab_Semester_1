@@ -24,7 +24,6 @@ void setup() {
   //yRectBackround = appHeight*0;
   //widthRectBackround = appWidth-1;
   //heightRectBackround = appHeight-1;
-  
   //
   xRectQuit = appWidth*18/20-1;
   yRectQuit = appHeight*0/20;
