@@ -1,6 +1,11 @@
 //Global Variables
+PFont IntroductionFont;
+String Introduction = "Merry Christmas!";
+color crimson=#B90202, resetDefaultInk=#FFFFFF;
 int appWidth, appHeight;
+int size;
 //float xRectBackround, yRectBackround, widthRectBackround, heightRectBackround;
+float xRectGrinch, yRectGrinch, widthRectGrinch, heightRectGrinch;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 float xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction;
 float xRectreturn, yRectreturn, widthRectreturn, heightRectreturn;
@@ -36,23 +41,37 @@ void setup() {
   heightClame = appHeight*1/10;
   //
   xRectIntroduction = appWidth*1/4;
-  yRectIntroduction = appHeight*1/8;
+  yRectIntroduction = appHeight*1/6;
   widthRectIntroduction = appWidth*1/2;
-  heightRectIntroduction = appHeight*1/10;
+  heightRectIntroduction = appHeight*1/8;
+  //
+  xRectGrinch = appWidth*1/4;
+  yRectGrinch = appHeight*1/3;
+  widthRectGrinch = appWidth*2/4;
+  heightRectGrinch = appHeight*1/3;
   //
   //rect(xRectBackround, yRectBackround, widthRectBackround, heightRectBackround);
-  rect(xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
+  rect(xRectGrinch, yRectGrinch, widthRectGrinch, heightRectGrinch);
   rect(xRectreturn, yRectreturn, widthRectreturn, heightRectreturn);
   rect(xRectphrase, yRectphrase, widthRectphrase, heightRectphrase);
   rect(xRectinitials, yRectinitials, widthRectinitials, heightRectinitials);
+  fill(0, 200, 0);
+  rect(xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
   fill(255, 0, 0);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   fill(0, 255, 0);
   rect(xClame, yClame, widthClame, heightClame);
+  //
+  IntroductionFont = createFont("Comic Sans MS", 55);
   } //End setup
   //
 void draw() {
-  //
+  fill(crimson);
+  textAlign(CENTER, CENTER); 
+  size = 50;
+  textFont(IntroductionFont, 50); 
+  text(Introduction, xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
+  fill(resetDefaultInk);
 } //End draw
 //
 void keyPressed() {
