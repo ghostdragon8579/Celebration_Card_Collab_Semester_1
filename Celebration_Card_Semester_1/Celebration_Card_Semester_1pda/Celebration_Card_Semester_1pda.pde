@@ -1,9 +1,12 @@
 //Global Variables
+PImage rectQuit;
+PImage rectClame;
 PFont IntroductionFont;
 String Introduction = "Merry Christmas!";
 color crimson=#B90202, resetDefaultInk=#FFFFFF;
 int appWidth, appHeight;
 int size;
+int brightnessNumber=255;
 //float xRectBackround, yRectBackround, widthRectBackround, heightRectBackround;
 float xRectGrinch, yRectGrinch, widthRectGrinch, heightRectGrinch;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
@@ -13,6 +16,7 @@ float xRectphrase, yRectphrase, widthRectphrase, heightRectphrase;
 float xRectinitials, yRectinitials, widthRectinitials, heightRectinitials;
 float xClame, yClame, widthClame, heightClame;
 float xClameOutline, yClameOutline, widthClameOutline, heightClameOutline;
+Boolean brightnessControl=false;
 void setup() {
   //Print & Println
   println("Hello World");
@@ -35,11 +39,13 @@ void setup() {
   yRectQuit = appHeight*0/20;
   widthRectQuit = appWidth*1/10;
   heightRectQuit = appHeight*1/10;
+  rectQuit = loadImage("../Images for the Celebration Card/exet.png");
   //
   xClame = appWidth*3/8;
   yClame = appHeight*3/4;
   widthClame = appWidth*1/4;
-  heightClame = appHeight*1/10;
+  heightClame = appHeight*1/8;
+  rectClame = loadImage("../Images for the Celebration Card/next.png");
   //
   xRectIntroduction = appWidth*1/4;
   yRectIntroduction = appHeight*1/6;
@@ -56,11 +62,10 @@ void setup() {
   rect(xRectreturn, yRectreturn, widthRectreturn, heightRectreturn);
   rect(xRectphrase, yRectphrase, widthRectphrase, heightRectphrase);
   rect(xRectinitials, yRectinitials, widthRectinitials, heightRectinitials);
+  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   rect(xClameOutline, yClameOutline, widthClameOutline, heightClameOutline);
   fill(0, 200, 0);
   rect(xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
-  fill(255, 0, 0);
-  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   fill(0, 255, 0);
   rect(xClame, yClame, widthClame, heightClame);
   //
@@ -68,6 +73,23 @@ void setup() {
   } //End setup
   //
 void draw() {
+  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  rect(xClame, yClame, widthClame, heightClame);
+  //
+   if ( brightnessControl==true );
+  {
+    if ( brightnessNumber<0 ) {
+      brightnessNumber=0;
+    } else if ( brightnessNumber>255 ) {
+      brightnessNumber=255;
+    } else {
+      //Empty ELSE
+    }
+    tint (255, brightnessNumber);
+  }
+  image(rectClame, xClame, yClame, widthClame, heightClame);
+  image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  //
   fill(crimson);
   textAlign(CENTER, CENTER); 
   size = 50;
@@ -77,13 +99,20 @@ void draw() {
 } //End draw
 //
 void keyPressed() {
+  //
+    if (key==CODED && keyCode == UP || keyCode == DOWN) {
+    brightnessControl = true;
+    if (key==CODED && keyCode == UP) brightnessNumber+=51;
+    if (key==CODED && keyCode == DOWN) brightnessNumber-=51;
+  }
+  //
+  println(brightnessNumber);
+  //
 } //End keyPressed
 //
 void mousePressed() {
-  //When mouse is pressed
   println("Mouse X: ", mouseX, "Mouse Y: ", mouseY);
   //
-  //xRect2, yRect2, widthRect2, heightRect2
   if ( mouseX>xRectQuit && mouseX<xRectQuit+widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+heightRectQuit ) exit();
   if ( mouseX>xClame && mouseX<xClame+widthClame && mouseY>yClame && mouseY<yClame+heightClame) println("clamed");
   //
