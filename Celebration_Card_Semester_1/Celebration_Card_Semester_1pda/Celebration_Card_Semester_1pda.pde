@@ -12,6 +12,7 @@ float xRectreturn, yRectreturn, widthRectreturn, heightRectreturn;
 float xRectphrase, yRectphrase, widthRectphrase, heightRectphrase;
 float xRectinitials, yRectinitials, widthRectinitials, heightRectinitials;
 float xClame, yClame, widthClame, heightClame;
+float xClameOutline, yClameOutline, widthClameOutline, heightClameOutline;
 void setup() {
   //Print & Println
   println("Hello World");
@@ -55,6 +56,7 @@ void setup() {
   rect(xRectreturn, yRectreturn, widthRectreturn, heightRectreturn);
   rect(xRectphrase, yRectphrase, widthRectphrase, heightRectphrase);
   rect(xRectinitials, yRectinitials, widthRectinitials, heightRectinitials);
+  rect(xClameOutline, yClameOutline, widthClameOutline, heightClameOutline);
   fill(0, 200, 0);
   rect(xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
   fill(255, 0, 0);
