@@ -129,8 +129,8 @@ void keyPressed() {
   //
     if (key==CODED && keyCode == UP || keyCode == DOWN) {
     brightnessControl = true;
-    if (key==CODED && keyCode == UP) brightnessNumber+=51;
-    if (key==CODED && keyCode == DOWN) brightnessNumber-=51;
+    if (key==CODED && keyCode == UP) brightnessNumber+=5;
+    if (key==CODED && keyCode == DOWN) brightnessNumber-=5;
   }
   //
   println(nightmode);
