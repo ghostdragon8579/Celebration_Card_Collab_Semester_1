@@ -92,6 +92,13 @@ void draw() {
     }
     tint (255, brightnessNumber);
   }
+  //
+  if ( nightmode==true ) {
+    tint ( 64, 64, 40 );
+    //NOTE MAKE A COLOR SLIDER.
+    println(nightmode);
+  } else {
+  }
   image(rectClame, xClame, yClame, widthClame, heightClame);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   //
@@ -112,13 +119,21 @@ void draw() {
 //
 void keyPressed() {
   //
+  if ( key=='n' || key=='N' ) {
+    if ( nightmode==true ) {
+      nightmode = false;
+    } else {
+      nightmode = true;
+    }
+  }
+  //
     if (key==CODED && keyCode == UP || keyCode == DOWN) {
     brightnessControl = true;
     if (key==CODED && keyCode == UP) brightnessNumber+=51;
     if (key==CODED && keyCode == DOWN) brightnessNumber-=51;
   }
   //
-  println(brightnessNumber);
+  println(nightmode);
   //
 } //End keyPressed
 //
