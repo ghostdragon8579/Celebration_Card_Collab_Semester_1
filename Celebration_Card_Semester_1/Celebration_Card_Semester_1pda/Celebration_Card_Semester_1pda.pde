@@ -2,7 +2,10 @@
 PImage rectQuit;
 PImage rectClame;
 PFont IntroductionFont;
+PFont InitialFont;
 String Introduction = "Merry Christmas!";
+String Initials = "Eric Barnes";
+color verdant=#00F512;
 color crimson=#B90202, resetDefaultInk=#FFFFFF;
 int appWidth, appHeight;
 int size;
@@ -17,6 +20,7 @@ float xRectinitials, yRectinitials, widthRectinitials, heightRectinitials;
 float xClame, yClame, widthClame, heightClame;
 float xClameOutline, yClameOutline, widthClameOutline, heightClameOutline;
 Boolean brightnessControl=false;
+Boolean nightmode=false;
 void setup() {
   //Print & Println
   println("Hello World");
@@ -70,6 +74,7 @@ void setup() {
   rect(xClame, yClame, widthClame, heightClame);
   //
   IntroductionFont = createFont("Comic Sans MS", 55);
+  InitialFont = createFont("Papyrus", 55);
   } //End setup
   //
 void draw() {
@@ -95,6 +100,13 @@ void draw() {
   size = 50;
   textFont(IntroductionFont, 50); 
   text(Introduction, xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
+  fill(resetDefaultInk);
+  //
+  fill(verdant);
+  textAlign(CENTER, CENTER); 
+  size = 80;
+  textFont(InitialFont, 50); 
+  text(Initials, xRectGrinch, yRectGrinch, widthRectGrinch, heightRectGrinch);
   fill(resetDefaultInk);
 } //End draw
 //
