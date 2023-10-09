@@ -1,6 +1,7 @@
 //Global Variables
 PImage rectQuit;
 PImage rectClame;
+PImage rectTree;
 PFont IntroductionFont;
 PFont InitialFont;
 String Introduction = "Merry Christmas!";
@@ -11,7 +12,7 @@ int appWidth, appHeight;
 int size;
 int brightnessNumber=255;
 //float xRectBackround, yRectBackround, widthRectBackround, heightRectBackround;
-float xRectGrinch, yRectGrinch, widthRectGrinch, heightRectGrinch;
+float xRectTree, yRectTree, widthRectTree, heightRectTree;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 float xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction;
 float xRectreturn, yRectreturn, widthRectreturn, heightRectreturn;
@@ -59,13 +60,15 @@ void setup() {
   widthRectIntroduction = appWidth*1/2;
   heightRectIntroduction = appHeight*1/8;
   //
-  xRectGrinch = appWidth*1/4;
-  yRectGrinch = appHeight*1/3;
-  widthRectGrinch = appWidth*2/4;
-  heightRectGrinch = appHeight*1/3;
+  xRectTree = appWidth*1/4;
+  yRectTree = appHeight*1/3;
+  widthRectTree = appWidth*2/4;
+  heightRectTree = appHeight*1/3;
+  //rectTree = loadImage("../Images for the Celebration Card/");
+  //
   //
   //rect(xRectBackround, yRectBackround, widthRectBackround, heightRectBackround);
-  rect(xRectGrinch, yRectGrinch, widthRectGrinch, heightRectGrinch);
+  rect(xRectTree, yRectTree, widthRectTree, heightRectTree);
   rect(xRectreturn, yRectreturn, widthRectreturn, heightRectreturn);
   rect(xRectphrase, yRectphrase, widthRectphrase, heightRectphrase);
   rect(xRectinitials, yRectinitials, widthRectinitials, heightRectinitials);
