@@ -21,6 +21,9 @@ float xClame, yClame, widthClame, heightClame;
 float xClameOutline, yClameOutline, widthClameOutline, heightClameOutline;
 Boolean brightnessControl=false;
 Boolean nightmode=false;
+Boolean Redcontrol=false;
+Boolean Bluecontrol=false;
+Boolean Greencontrol=false;
 void setup() {
   //Print & Println
   println("Hello World");
@@ -94,11 +97,20 @@ void draw() {
   }
   //
   if ( nightmode==true ) {
-    tint ( 64, 64, 40 );
-    //NOTE MAKE A COLOR SLIDER.
-    println(nightmode);
+    tint ( 125, 125, 40 );
   } else {
   }
+  //
+  if ( Redcontrol==true ) {
+    tint ( 1, 255, 255 );
+  } else {
+  }
+  //
+  if ( Bluecontrol==true ) {
+    tint ( 255, 1, 255 );
+  } else {
+  }
+  //
   image(rectClame, xClame, yClame, widthClame, heightClame);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   //
@@ -127,13 +139,40 @@ void keyPressed() {
     }
   }
   //
+  if (key=='r' || key=='R') {
+    if ( Redcontrol==true ) {
+      Redcontrol = false;
+    } else {
+      Redcontrol = true;
+    }
+  }
+  //
+  if (key=='b' || key=='B') {
+    if ( Bluecontrol==true ) {
+      Bluecontrol = false;
+    } else {
+      Bluecontrol = true;
+    }
+  }
+  //
+  if (key=='g' || key=='G') {
+    if ( Greencontrol==true ) {
+      Greencontrol = false;
+    } else {
+      Greencontrol = true;
+    }
+  }
+  //
     if (key==CODED && keyCode == UP || keyCode == DOWN) {
     brightnessControl = true;
     if (key==CODED && keyCode == UP) brightnessNumber+=5;
     if (key==CODED && keyCode == DOWN) brightnessNumber-=5;
   }
   //
-  println(nightmode);
+  //println(Redcontrol);
+  //println(Bluecontrol);
+  //println(Greencontrol);
+  //println(nightmode);
   //
 } //End keyPressed
 //
