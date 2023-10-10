@@ -6,11 +6,13 @@ PFont IntroductionFont;
 PFont InitialFont;
 String Introduction = "Merry Christmas!";
 String Initials = "Eric Barnes";
+color navy=#020BA7;
 color verdant=#00F512;
 color crimson=#B90202, resetDefaultInk=#FFFFFF;
 int appWidth, appHeight;
 int size;
 int brightnessNumber=255;
+int RedNumber=255;
 //float xRectBackround, yRectBackround, widthRectBackround, heightRectBackround;
 float xRectTree, yRectTree, widthRectTree, heightRectTree;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
@@ -26,22 +28,14 @@ Boolean Redcontrol=false;
 Boolean Bluecontrol=false;
 Boolean Greencontrol=false;
 void setup() {
-  //Print & Println
-  println("Hello World");
+  //
   println("Width:"+width, "\t", "Height:"+height);
   println("Display Width:"+displayWidth, "\tDisplay Height: "+displayHeight);
-  //Character Escapes, tab, new
   //
   //fullScreen();
   size(1000, 800);
  int appWidth = width;
  int appHeight = height;
-  //
-  //Population
-  //xRectBackround = appWidth*0;
-  //yRectBackround = appHeight*0;
-  //widthRectBackround = appWidth-1;
-  //heightRectBackround = appHeight-1;
   //
   xRectQuit = appWidth*18/20-1;
   yRectQuit = appHeight*0/20;
@@ -68,16 +62,18 @@ void setup() {
   //
   //
   //rect(xRectBackround, yRectBackround, widthRectBackround, heightRectBackround);
+  circle(500, 400, 800);
   rect(xRectTree, yRectTree, widthRectTree, heightRectTree);
   rect(xRectreturn, yRectreturn, widthRectreturn, heightRectreturn);
   rect(xRectphrase, yRectphrase, widthRectphrase, heightRectphrase);
-  rect(xRectinitials, yRectinitials, widthRectinitials, heightRectinitials);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  rect(xRectinitials, yRectinitials, widthRectinitials, heightRectinitials);
   rect(xClameOutline, yClameOutline, widthClameOutline, heightClameOutline);
+  rect(xClame, yClame, widthClame, heightClame);
   fill(0, 200, 0);
   rect(xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
-  fill(0, 255, 0);
-  rect(xClame, yClame, widthClame, heightClame);
+  fill(navy);
+  rect(xRectTree, yRectTree, widthRectTree, heightRectTree);
   //
   IntroductionFont = createFont("Comic Sans MS", 55);
   InitialFont = createFont("Papyrus", 55);
@@ -99,13 +95,20 @@ void draw() {
     tint (255, brightnessNumber);
   }
   //
-  if ( nightmode==true ) {
-    tint ( 125, 125, 40 );
-  } else {
+  if ( Redcontrol==true );
+  {
+    if ( RedNumber<1 ) {
+      RedNumber=1;
+    } else if ( RedNumber>255 ) {
+      RedNumber=255;
+    } else {
+      //Empty ELSE
+    }
+    tint (RedNumber, 255, 255);
   }
   //
-  if ( Redcontrol==true ) {
-    tint ( 1, 255, 255 );
+  if ( nightmode==true ) {
+    tint ( 125, 125, 40 );
   } else {
   }
   //
@@ -128,7 +131,7 @@ void draw() {
   textAlign(CENTER, CENTER); 
   size = 80;
   textFont(InitialFont, 50); 
-  text(Initials, xRectGrinch, yRectGrinch, widthRectGrinch, heightRectGrinch);
+  text(Initials, xRectTree, yRectTree, widthRectTree, heightRectTree);
   fill(resetDefaultInk);
 } //End draw
 //
@@ -140,15 +143,7 @@ void keyPressed() {
     } else {
       nightmode = true;
     }
-  }
-  //
-  if (key=='r' || key=='R') {
-    if ( Redcontrol==true ) {
-      Redcontrol = false;
-    } else {
-      Redcontrol = true;
-    }
-  }
+  }   
   //
   if (key=='b' || key=='B') {
     if ( Bluecontrol==true ) {
@@ -166,11 +161,17 @@ void keyPressed() {
     }
   }
   //
-    if (key==CODED && keyCode == UP || keyCode == DOWN) {
+    if (key==CODED && keyCode == LEFT || keyCode == RIGHT) {
     brightnessControl = true;
-    if (key==CODED && keyCode == UP) brightnessNumber+=5;
-    if (key==CODED && keyCode == DOWN) brightnessNumber-=5;
+    if (key==CODED && keyCode == LEFT) brightnessNumber+=5;
+    if (key==CODED && keyCode == RIGHT) brightnessNumber-=5;
   }
+  //
+    if (key==CODED && keyCode == UP || keyCode == DOWN) {
+    Redcontrol = true;
+    if (key==CODED && keyCode == UP) RedNumber+=5;
+    if (key==CODED && keyCode == DOWN) RedNumber-=5;
+    }
   //
   //println(Redcontrol);
   //println(Bluecontrol);
