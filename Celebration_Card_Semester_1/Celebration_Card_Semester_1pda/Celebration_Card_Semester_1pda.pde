@@ -12,7 +12,9 @@ color crimson=#B90202, resetDefaultInk=#FFFFFF;
 int appWidth, appHeight;
 int size;
 int brightnessNumber=255;
-int RedNumber=255;
+int NightmodeBlue=40;
+int NightmodeRed=125;
+int NightmodeGreen=125;
 //float xRectBackround, yRectBackround, widthRectBackround, heightRectBackround;
 float xRectTree, yRectTree, widthRectTree, heightRectTree;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
@@ -95,25 +97,23 @@ void draw() {
     tint (255, brightnessNumber);
   }
   //
-  if ( Redcontrol==true );
-  {
-    if ( RedNumber<1 ) {
-      RedNumber=1;
-    } else if ( RedNumber>255 ) {
-      RedNumber=255;
-    } else {
-      //Empty ELSE
-    }
-    tint (RedNumber, 255, 255);
+  if ( Redcontrol==true ) {
+    tint ( 1, 255, 255 );
+  } else {
   }
   //
-  if ( nightmode==true ) {
-    tint ( 125, 125, 40 );
+  if ( Greencontrol==true ) {
+    tint ( 255, 1, 255 );
   } else {
   }
   //
   if ( Bluecontrol==true ) {
-    tint ( 255, 1, 255 );
+    tint ( 255, 255, 1 );
+  } else {
+  }
+  //
+   if ( nightmode==true ) {
+    tint (NightmodeRed, NightmodeGreen, NightmodeBlue);
   } else {
   }
   //
@@ -145,6 +145,14 @@ void keyPressed() {
     }
   }   
   //
+  if (key=='r' || key=='R') {
+    if ( Redcontrol==true ) {
+      Redcontrol = false;
+    } else {
+      Redcontrol = true;
+    }
+  }
+  //
   if (key=='b' || key=='B') {
     if ( Bluecontrol==true ) {
       Bluecontrol = false;
@@ -161,17 +169,11 @@ void keyPressed() {
     }
   }
   //
-    if (key==CODED && keyCode == LEFT || keyCode == RIGHT) {
-    brightnessControl = true;
-    if (key==CODED && keyCode == LEFT) brightnessNumber+=5;
-    if (key==CODED && keyCode == RIGHT) brightnessNumber-=5;
-  }
-  //
     if (key==CODED && keyCode == UP || keyCode == DOWN) {
-    Redcontrol = true;
-    if (key==CODED && keyCode == UP) RedNumber+=5;
-    if (key==CODED && keyCode == DOWN) RedNumber-=5;
-    }
+    brightnessControl = true;
+    if (key==CODED && keyCode == UP) brightnessNumber+=5;
+    if (key==CODED && keyCode == DOWN) brightnessNumber-=5;
+  }
   //
   //println(Redcontrol);
   //println(Bluecontrol);
