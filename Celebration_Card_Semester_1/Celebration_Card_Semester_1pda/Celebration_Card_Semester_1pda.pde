@@ -2,7 +2,7 @@
 PImage rectQuit;
 PImage rectClame;
 PImage rectTree;
-PImage rectReturn;
+PImage rectReturn1;
 PFont IntroductionFont;
 PFont InitialFont;
 String Introduction = "Merry Christmas!";
@@ -17,6 +17,7 @@ int NightmodeBlue=40;
 int NightmodeRed=125;
 int NightmodeGreen=125;
 //float xRectBackround, yRectBackround, widthRectBackround, heightRectBackround;
+float xRectLine1, yRectLine1, widthRectLine1, heightRectLine1;
 float xRectCard1, yRectCard1, widthRectCard1, heightRectCard1;
 float xRectCard2, yRectCard2, widthRectCard2, heightRectCard2;
 float xRectCard3, yRectCard3, widthRectCard3, heightRectCard3;
@@ -80,11 +81,16 @@ void setup() {
  int appWidth = width;
  int appHeight = height;
   //
+  xRectLine1 = appWidth*1/2;
+  yRectLine1 = appHeight;
+  widthRectLine1 = xRectLine1;
+  heightRectLine1 = appHeight*0/10;
+  //
   xRectCard1 = appWidth*21/25;
-  yRectCard1 = yRectQuit;
-  widthRectCard1 = appWidth*11/12+3;
+  yRectCard1 = appHeight*0/20;
+  widthRectCard1 = appWidth*1/12;
   heightRectCard1 = appHeight*1/12;
-  rectReturn = loadImage("../Images for the Celebration Card/menu.png");
+  rectReturn1 = loadImage("../Images for the Celebration Card/menu.png");
   //
   xRectQuit = appWidth*18/20+20;
   yRectQuit = appHeight*0/20;
@@ -109,9 +115,9 @@ void setup() {
   heightRectTree = appHeight*1/3;
   //rectTree = loadImage("../Images for the Celebration Card/");
   //
-  //
   //rect(xRectBackround, yRectBackround, widthRectBackround, heightRectBackround);
   circle(500, 400, 800);
+  //line();
   rect(xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
   rect(xRectCard2, yRectCard2, widthRectCard2, heightRectCard2);
   rect(xRectCard3, yRectCard3, widthRectCard3, heightRectCard3);
@@ -171,6 +177,7 @@ void setup() {
 void draw() {
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   rect(xClame, yClame, widthClame, heightClame);
+  rect(xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
   //
    if ( brightnessControl==true );
   {
@@ -206,6 +213,7 @@ void draw() {
   //
   image(rectClame, xClame, yClame, widthClame, heightClame);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  image(rectReturn1, xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
   //
   fill(crimson);
   textAlign(CENTER, CENTER); 
@@ -220,6 +228,7 @@ void draw() {
   textFont(InitialFont, 50); 
   text(Initials, xRectTree, yRectTree, widthRectTree, heightRectTree);
   fill(resetDefaultInk);
+  //
 } //End draw
 //
 void keyPressed() {
