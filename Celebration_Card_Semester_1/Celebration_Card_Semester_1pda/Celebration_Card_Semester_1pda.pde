@@ -16,7 +16,7 @@ int brightnessNumber=255;
 int NightmodeBlue=40;
 int NightmodeRed=125;
 int NightmodeGreen=125;
-//float xRectBackround, yRectBackround, widthRectBackround, heightRectBackround;
+float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectLine1, yRectLine1, widthRectLine1, heightRectLine1;
 float xRectCard1, yRectCard1, widthRectCard1, heightRectCard1;
 float xRectCard2, yRectCard2, widthRectCard2, heightRectCard2;
@@ -81,6 +81,11 @@ void setup() {
  int appWidth = width;
  int appHeight = height;
   //
+  xRectBackground = appWidth;
+  yRectBackground = appHeight;
+  widthRectBackground = appWidth;
+  heightRectBackground = appHeight;
+  //
   xRectLine1 = appWidth*1/2;
   yRectLine1 = appHeight;
   widthRectLine1 = xRectLine1;
@@ -115,9 +120,7 @@ void setup() {
   heightRectTree = appHeight*1/3;
   //rectTree = loadImage("../Images for the Celebration Card/");
   //
-  //rect(xRectBackround, yRectBackround, widthRectBackround, heightRectBackround);
   circle(500, 400, 800);
-  //line();
   rect(xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
   rect(xRectCard2, yRectCard2, widthRectCard2, heightRectCard2);
   rect(xRectCard3, yRectCard3, widthRectCard3, heightRectCard3);
@@ -158,6 +161,7 @@ void setup() {
   rect(xRectCard38, yRectCard38, widthRectCard38, heightRectCard38);
   rect(xRectCard39, yRectCard39, widthRectCard39, heightRectCard39);
   rect(xRectCard40, yRectCard40, widthRectCard40, heightRectCard40);
+  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   rect(xRectTree, yRectTree, widthRectTree, heightRectTree);
   rect(xRectreturn, yRectreturn, widthRectreturn, heightRectreturn);
   rect(xRectphrase, yRectphrase, widthRectphrase, heightRectphrase);
@@ -169,6 +173,7 @@ void setup() {
   rect(xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
   fill(navy);
   rect(xRectTree, yRectTree, widthRectTree, heightRectTree);
+  line(xRectLine1, yRectLine1, widthRectLine1, heightRectLine1);
   //
   IntroductionFont = createFont("Comic Sans MS", 55);
   InitialFont = createFont("Papyrus", 55);
