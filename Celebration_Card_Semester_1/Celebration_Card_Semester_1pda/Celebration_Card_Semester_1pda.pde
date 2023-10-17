@@ -2,6 +2,7 @@
 PImage rectQuit;
 PImage rectClame;
 PImage rectTree;
+PImage rectReturn;
 PFont IntroductionFont;
 PFont InitialFont;
 String Introduction = "Merry Christmas!";
@@ -79,10 +80,16 @@ void setup() {
  int appWidth = width;
  int appHeight = height;
   //
-  xRectQuit = appWidth*18/20-1;
+  xRectCard1 = appWidth*21/25;
+  yRectCard1 = yRectQuit;
+  widthRectCard1 = appWidth*11/12+3;
+  heightRectCard1 = appHeight*1/12;
+  rectReturn = loadImage("../Images for the Celebration Card/menu.png");
+  //
+  xRectQuit = appWidth*18/20+20;
   yRectQuit = appHeight*0/20;
-  widthRectQuit = appWidth*1/10;
-  heightRectQuit = appHeight*1/10;
+  widthRectQuit = appWidth*1/12;
+  heightRectQuit = appHeight*1/12;
   rectQuit = loadImage("../Images for the Celebration Card/exet.png");
   //
   xClame = appWidth*3/8;
@@ -267,6 +274,7 @@ void mousePressed() {
   //
   if ( mouseX>xRectQuit && mouseX<xRectQuit+widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+heightRectQuit ) exit();
   if ( mouseX>xClame && mouseX<xClame+widthClame && mouseY>yClame && mouseY<yClame+heightClame) println("clamed");
+  if ( mouseX>xRectCard1 && mouseX<xRectCard1+widthRectCard1 && mouseY>yRectCard1 && mouseY<yRectCard1+heightRectCard1) println("Returned");
   //
 } //End mousePressed
 //
