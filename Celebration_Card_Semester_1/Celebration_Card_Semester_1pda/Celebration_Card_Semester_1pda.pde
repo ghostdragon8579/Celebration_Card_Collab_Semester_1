@@ -109,18 +109,18 @@ void setup() {
   heightClame = appHeight*1/8;
   rectClame = loadImage("../Images for the Celebration Card/next.png");
   //
+  xRectTree = appWidth*1/4;
+  yRectTree = appHeight*1/3;
+  widthRectTree = appWidth*2/4;
+  heightRectTree = appHeight*1/3;
+  rectTree = loadImage("../Images for the Celebration Card/Christmas Tree.jpg");
+  //
   xRectIntroduction = appWidth*1/4;
   yRectIntroduction = appHeight*1/6;
   widthRectIntroduction = appWidth*1/2;
   heightRectIntroduction = appHeight*1/8;
   //
-  xRectTree = appWidth*1/4;
-  yRectTree = appHeight*1/3;
-  widthRectTree = appWidth*2/4;
-  heightRectTree = appHeight*1/3;
-  //rectTree = loadImage("../Images for the Celebration Card/");
-  //
-  circle(500, 400, 800);
+  //circle(500, 400, 800);
   rect(xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
   rect(xRectCard2, yRectCard2, widthRectCard2, heightRectCard2);
   rect(xRectCard3, yRectCard3, widthRectCard3, heightRectCard3);
@@ -219,6 +219,7 @@ void draw() {
   image(rectClame, xClame, yClame, widthClame, heightClame);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   image(rectReturn1, xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
+  image(rectTree, xRectTree, yRectTree, widthRectTree, heightRectTree);
   //
   fill(crimson);
   textAlign(CENTER, CENTER); 
