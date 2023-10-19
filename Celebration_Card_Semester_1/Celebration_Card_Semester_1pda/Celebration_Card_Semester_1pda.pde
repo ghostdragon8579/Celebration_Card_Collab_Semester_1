@@ -17,7 +17,6 @@ int brightnessNumber=255;
 int NightmodeBlue=40;
 int NightmodeRed=125;
 int NightmodeGreen=125;
-float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectLine1, yRectLine1, widthRectLine1, heightRectLine1;
 float xRectCard1, yRectCard1, widthRectCard1, heightRectCard1;
 float xRectCard2, yRectCard2, widthRectCard2, heightRectCard2;
@@ -57,6 +56,7 @@ float xRectCard35, yRectCard35, widthRectCard35, heightRectCard35;
 float xRectCard36, yRectCard36, widthRectCard36, heightRectCard36;
 float xRectCard37, yRectCard37, widthRectCard37, heightRectCard37;
 float xRectCard38, yRectCard38, widthRectCard38, heightRectCard38;
+float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectSnowGlobe, yRectSnowGlobe, widthRectSnowGlobe, heightRectSnowGlobe;
 float xRectTree, yRectTree, widthRectTree, heightRectTree;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
@@ -72,6 +72,16 @@ Boolean Redcontrol=false;
 Boolean Bluecontrol=false;
 Boolean Greencontrol=false;
 void setup() {
+  //
+  int hourNightMode = hour(); //24-hour clock
+  println(hourNightMode);
+  if ( hourNightMode>17 ) {
+    nightmode=true;
+  } else if ( hourNightMode<05 ) {
+    nightmode=true;
+  } else {
+    nightmode=false;
+  }
   //
   println("Width:"+width, "\t", "Height:"+height);
   println("Display Width:"+displayWidth, "\tDisplay Height: "+displayHeight);
