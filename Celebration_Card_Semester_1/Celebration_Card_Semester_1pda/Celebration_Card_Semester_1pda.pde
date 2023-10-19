@@ -2,7 +2,8 @@
 PImage rectQuit;
 PImage rectClame;
 PImage rectTree;
-PImage rectReturn1;
+PImage rectReturn;
+PImage rectSnowGlobe;
 PFont IntroductionFont;
 PFont InitialFont;
 String Introduction = "Merry Christmas!";
@@ -58,6 +59,7 @@ float xRectCard37, yRectCard37, widthRectCard37, heightRectCard37;
 float xRectCard38, yRectCard38, widthRectCard38, heightRectCard38;
 float xRectCard39, yRectCard39, widthRectCard39, heightRectCard39;
 float xRectCard40, yRectCard40, widthRectCard40, heightRectCard40;
+float xRectSnowGlobe, yRectSnowGlobe, widthRectSnowGlobe, heightRectSnowGlobe;
 float xRectTree, yRectTree, widthRectTree, heightRectTree;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 float xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction;
@@ -81,6 +83,11 @@ void setup() {
  int appWidth = width;
  int appHeight = height;
   //
+  xRectIntroduction = appWidth*1/4;
+  yRectIntroduction = appHeight*1/6;
+  widthRectIntroduction = appWidth*1/2;
+  heightRectIntroduction = appHeight*1/8;
+  //
   xRectBackground = appWidth;
   yRectBackground = appHeight;
   widthRectBackground = appWidth;
@@ -95,7 +102,7 @@ void setup() {
   yRectCard1 = appHeight*0/20;
   widthRectCard1 = appWidth*1/12;
   heightRectCard1 = appHeight*1/12;
-  rectReturn1 = loadImage("../Images for the Celebration Card/menu.png");
+  rectReturn = loadImage("../Images for the Celebration Card/menu.png");
   //
   xRectQuit = appWidth*18/20+20;
   yRectQuit = appHeight*0/20;
@@ -112,13 +119,13 @@ void setup() {
   xRectTree = appWidth*1/4;
   yRectTree = appHeight*1/3;
   widthRectTree = appWidth*2/4;
-  heightRectTree = appHeight*1/3;
+  heightRectTree = appHeight*2/5;
   rectTree = loadImage("../Images for the Celebration Card/Christmas Tree.jpg");
   //
-  xRectIntroduction = appWidth*1/4;
-  yRectIntroduction = appHeight*1/6;
-  widthRectIntroduction = appWidth*1/2;
-  heightRectIntroduction = appHeight*1/8;
+  xRectSnowGlobe = xRectTree*1/3;
+  yRectSnowGlobe = yRectTree*1/4;
+  widthRectSnowGlobe = widthRectTree*2/3;
+  heightRectSnowGlobe = heightRectTree*3/4;
   //
   //circle(500, 400, 800);
   rect(xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
@@ -161,6 +168,7 @@ void setup() {
   rect(xRectCard38, yRectCard38, widthRectCard38, heightRectCard38);
   rect(xRectCard39, yRectCard39, widthRectCard39, heightRectCard39);
   rect(xRectCard40, yRectCard40, widthRectCard40, heightRectCard40);
+  rect(xRectSnowGlobe, yRectSnowGlobe, widthRectSnowGlobe, heightRectSnowGlobe);
   rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   rect(xRectTree, yRectTree, widthRectTree, heightRectTree);
   rect(xRectreturn, yRectreturn, widthRectreturn, heightRectreturn);
@@ -218,7 +226,7 @@ void draw() {
   //
   image(rectClame, xClame, yClame, widthClame, heightClame);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
-  image(rectReturn1, xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
+  image(rectReturn, xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
   image(rectTree, xRectTree, yRectTree, widthRectTree, heightRectTree);
   //
   fill(crimson);
