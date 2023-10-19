@@ -175,7 +175,6 @@ void setup() {
   rect(xRectCard37, yRectCard37, widthRectCard37, heightRectCard37);
   rect(xRectCard38, yRectCard38, widthRectCard38, heightRectCard38);
   rect(xRectSnowGlobe, yRectSnowGlobe, widthRectSnowGlobe, heightRectSnowGlobe);
-  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   rect(xRectTree, yRectTree, widthRectTree, heightRectTree);
   rect(xRectreturn, yRectreturn, widthRectreturn, heightRectreturn);
   rect(xRectphrase, yRectphrase, widthRectphrase, heightRectphrase);
@@ -184,6 +183,8 @@ void setup() {
   rect(xClameOutline, yClameOutline, widthClameOutline, heightClameOutline);
   rect(xClame, yClame, widthClame, heightClame);
   fill(0, 200, 0);
+  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
+  fill(navy);
   rect(xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
   fill(navy);
   rect(xRectTree, yRectTree, widthRectTree, heightRectTree);
