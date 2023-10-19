@@ -126,14 +126,14 @@ void setup() {
   //
   xRectTree = appWidth*1/4;
   yRectTree = appHeight*1/3;
-  widthRectTree = appWidth*2/4;
+  widthRectTree = appWidth*1/2;
   heightRectTree = appHeight*2/5;
   rectTree = loadImage("../Images for the Celebration Card/Christmas Tree.jpg");
   //
-  xRectSnowGlobe = appWidth;
-  yRectSnowGlobe = appHeight;
-  widthRectSnowGlobe = appWidth;
-  heightRectSnowGlobe = appHeight;
+  xRectSnowGlobe = appWidth*3/8;
+  yRectSnowGlobe = appHeight*7/12;
+  widthRectSnowGlobe = appWidth*6/8;
+  heightRectSnowGlobe = appHeight*3/8;
   //
   //circle(500, 400, 800);
   rect(xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
@@ -233,7 +233,7 @@ void draw() {
   image(rectClame, xClame, yClame, widthClame, heightClame);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   image(rectReturn, xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
-  //image(rectTree, xRectTree, yRectTree, widthRectTree, heightRectTree);
+  image(rectTree, xRectTree, yRectTree, widthRectTree, heightRectTree);
   //
   fill(crimson);
   textAlign(CENTER, CENTER); 
