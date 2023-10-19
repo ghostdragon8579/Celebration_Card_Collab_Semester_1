@@ -73,7 +73,7 @@ Boolean Bluecontrol=false;
 Boolean Greencontrol=false;
 void setup() {
   //
-  int hourNightMode = hour(); //24-hour clock
+  int hourNightMode = hour();
   println(hourNightMode);
   if ( hourNightMode>17 ) {
     nightmode=true;
