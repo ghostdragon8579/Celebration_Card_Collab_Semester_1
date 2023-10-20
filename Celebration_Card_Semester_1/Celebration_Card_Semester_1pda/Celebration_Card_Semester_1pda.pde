@@ -176,9 +176,9 @@ void setup() {
   rect(xRectCard38, yRectCard38, widthRectCard38, heightRectCard38);
   rect(xRectSnowGlobe, yRectSnowGlobe, widthRectSnowGlobe, heightRectSnowGlobe);
   rect(xRectTree, yRectTree, widthRectTree, heightRectTree);
+  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   rect(xRectreturn, yRectreturn, widthRectreturn, heightRectreturn);
   rect(xRectphrase, yRectphrase, widthRectphrase, heightRectphrase);
-  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   rect(xRectinitials, yRectinitials, widthRectinitials, heightRectinitials);
   rect(xClameOutline, yClameOutline, widthClameOutline, heightClameOutline);
   rect(xClame, yClame, widthClame, heightClame);
@@ -195,6 +195,7 @@ void setup() {
   } //End setup
   //
 void draw() {
+  //
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   rect(xClame, yClame, widthClame, heightClame);
   rect(xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
