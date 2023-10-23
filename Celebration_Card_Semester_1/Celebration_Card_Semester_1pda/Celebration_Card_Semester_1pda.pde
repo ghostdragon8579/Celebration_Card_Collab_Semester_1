@@ -75,9 +75,9 @@ void setup() {
   //
   int hourNightMode = hour();
   println(hourNightMode);
-  if ( hourNightMode>17 ) {
+  if ( hourNightMode>18 ) {
     nightmode=true;
-  } else if ( hourNightMode<05 ) {
+  } else if ( hourNightMode<06 ) {
     nightmode=true;
   } else {
     nightmode=false;
