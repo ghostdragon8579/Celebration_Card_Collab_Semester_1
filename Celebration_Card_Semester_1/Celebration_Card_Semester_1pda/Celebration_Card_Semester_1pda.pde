@@ -71,6 +71,7 @@ Boolean nightmode=false;
 Boolean Redcontrol=false;
 Boolean Bluecontrol=false;
 Boolean Greencontrol=false;
+Boolean windowResizable=true;
 void setup() {
   //
   int hourNightMode = hour();
@@ -91,6 +92,14 @@ void setup() {
  int appWidth = width;
  int appHeight = height;
   //
+  String open = "/";
+  String imagesPath = open;
+  String Imagefolder = "Images for the Celebration Card";
+  String menuImage = "menu.png";
+  String exitImage = "exet.png";
+  String nextImage = "next.png";
+  String christmastreeImage = "Christmas Tree.jpg";
+  //
   xRectIntroduction = appWidth*1/4;
   yRectIntroduction = appHeight*1/6;
   widthRectIntroduction = appWidth*1/2;
@@ -110,25 +119,25 @@ void setup() {
   yRectCard1 = appHeight*0/20;
   widthRectCard1 = appWidth*1/12;
   heightRectCard1 = appHeight*1/12;
-  rectReturn = loadImage("../Images for the Celebration Card/menu.png");
+  rectReturn = loadImage(imagesPath + Imagefolder + open + menuImage);
   //
   xRectQuit = appWidth*18/20+20;
   yRectQuit = appHeight*0/20;
   widthRectQuit = appWidth*1/12;
   heightRectQuit = appHeight*1/12;
-  rectQuit = loadImage("../Images for the Celebration Card/exet.png");
+  rectQuit = loadImage(imagesPath + Imagefolder + open + exitImage);
   //
   xClame = appWidth*3/8;
   yClame = appHeight*3/4;
   widthClame = appWidth*1/4;
   heightClame = appHeight*1/8;
-  rectClame = loadImage("../Images for the Celebration Card/next.png");
+  rectClame = loadImage(imagesPath + Imagefolder + open + nextImage);
   //
   xRectTree = appWidth*1/4;
   yRectTree = appHeight*1/3;
   widthRectTree = appWidth*1/2;
   heightRectTree = appHeight*2/5;
-  rectTree = loadImage("../Images for the Celebration Card/Christmas Tree.jpg");
+  rectTree = loadImage(imagesPath + Imagefolder + open + christmastreeImage);
   //
   xRectSnowGlobe = appWidth*3/8;
   yRectSnowGlobe = appHeight*7/12;
