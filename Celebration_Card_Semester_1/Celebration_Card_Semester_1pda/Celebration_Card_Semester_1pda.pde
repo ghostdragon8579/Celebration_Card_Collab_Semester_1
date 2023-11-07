@@ -8,8 +8,7 @@ PFont IntroductionFont;
 PFont InitialFont;
 String Introduction = "Merry Christmas!";
 String Initials = "Eric Barnes";
-color navy=#020BA7;
-color verdant=#00F512;
+color pine=#00AA29;
 color crimson=#B90202, resetDefaultInk=#FFFFFF;
 int appWidth, appHeight;
 int size;
@@ -191,13 +190,9 @@ void setup() {
   rect(xRectinitials, yRectinitials, widthRectinitials, heightRectinitials);
   rect(xClameOutline, yClameOutline, widthClameOutline, heightClameOutline);
   rect(xClame, yClame, widthClame, heightClame);
-  fill(0, 200, 0);
   rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
-  fill(navy);
-  rect(xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
-  fill(navy);
-  rect(xRectTree, yRectTree, widthRectTree, heightRectTree);
   line(xRectLine1, yRectLine1, widthRectLine1, heightRectLine1);
+  image(rectTree, xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   //
   IntroductionFont = createFont("Comic Sans MS", 55);
   InitialFont = createFont("Papyrus", 55);
@@ -241,10 +236,13 @@ void draw() {
   } else {
   }
   //
+  fill(pine);
+  rect(xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
+  fill(pine);
+  rect(xRectTree, yRectTree, widthRectTree, heightRectTree);
   image(rectClame, xClame, yClame, widthClame, heightClame);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   image(rectReturn, xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
-  image(rectTree, xRectTree, yRectTree, widthRectTree, heightRectTree);
   //
   fill(crimson);
   textAlign(CENTER, CENTER); 
@@ -253,7 +251,7 @@ void draw() {
   text(Introduction, xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
   fill(resetDefaultInk);
   //
-  fill(verdant);
+  fill(crimson);
   textAlign(CENTER, CENTER); 
   size = 80;
   textFont(InitialFont, 50); 
