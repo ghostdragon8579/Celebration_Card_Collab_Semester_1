@@ -238,7 +238,7 @@ void draw() {
   } else {
   }
   //
-  color SnowFallcolor = color(0, random(0, 1), random(0,1));
+  color SnowFallcolor = color(255, 255, 255);
   int smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
   fill(SnowFallcolor);
   SnowFallDiameter = random(smallerDimension*1/50, smallerDimension*1/35);
