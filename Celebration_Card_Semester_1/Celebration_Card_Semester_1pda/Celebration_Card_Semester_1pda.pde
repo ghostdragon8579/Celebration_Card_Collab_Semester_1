@@ -65,12 +65,14 @@ float xRectphrase, yRectphrase, widthRectphrase, heightRectphrase;
 float xRectinitials, yRectinitials, widthRectinitials, heightRectinitials;
 float xClame, yClame, widthClame, heightClame;
 float xClameOutline, yClameOutline, widthClameOutline, heightClameOutline;
+float xSnowFall, ySnowFall, SnowFallDiameter;
 Boolean brightnessControl=false;
 Boolean nightmode=false;
 Boolean Redcontrol=false;
 Boolean Bluecontrol=false;
 Boolean Greencontrol=false;
 Boolean windowResizable=true;
+Boolean SnowFall=false;
 void setup() {
   //
   int hourNightMode = hour();
@@ -236,6 +238,17 @@ void draw() {
   } else {
   }
   //
+  color SnowFallcolor = color(0, random(0, 1), random(0,1));
+  int smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
+  fill(SnowFallcolor);
+  SnowFallDiameter = random(smallerDimension*1/50, smallerDimension*1/35);
+  xSnowFall = random(xRectBackground+(SnowFallDiameter/2), xRectBackground+widthRectBackground-(SnowFallDiameter/2));
+  ySnowFall = random(yRectBackground+(SnowFallDiameter/2), yRectBackground+heightRectBackground-(SnowFallDiameter/2));
+  noStroke();
+  if (SnowFall==true) ellipse(xSnowFall, ySnowFall, SnowFallDiameter, SnowFallDiameter);
+  stroke(1);
+  fill(resetDefaultInk);
+  //
   fill(pine);
   rect(xRectIntroduction, yRectIntroduction, widthRectIntroduction, heightRectIntroduction);
   fill(pine);
@@ -293,6 +306,10 @@ void keyPressed() {
       Greencontrol = true;
     }
   }
+  //
+  if(key==' ') SnowFall=true;
+  if(key==BACKSPACE) SnowFall=false;
+  if(key==ESC) exit();
   //
     if (key==CODED && keyCode == UP || keyCode == DOWN) {
     brightnessControl = true;
