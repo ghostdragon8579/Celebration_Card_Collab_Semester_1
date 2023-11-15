@@ -309,7 +309,6 @@ void keyPressed() {
   //
   if(key==' ') SnowFall=true;
   if(key==BACKSPACE) SnowFall=false;
-  if(key==ESC) exit();
   //
     if (key==CODED && keyCode == UP || keyCode == DOWN) {
     brightnessControl = true;
