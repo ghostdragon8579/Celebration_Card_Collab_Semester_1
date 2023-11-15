@@ -71,7 +71,6 @@ Boolean nightmode=false;
 Boolean Redcontrol=false;
 Boolean Bluecontrol=false;
 Boolean Greencontrol=false;
-Boolean windowResizable=true;
 Boolean SnowFall=false;
 void setup() {
   //
