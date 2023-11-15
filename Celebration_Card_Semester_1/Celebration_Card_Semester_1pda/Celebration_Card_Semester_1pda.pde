@@ -8,6 +8,8 @@ PFont IntroductionFont;
 PFont InitialFont;
 String Introduction = "Merry Christmas!";
 String Initials = "Eric Barnes";
+String Yes = "Yes";
+String No = "No";
 color pine=#00AA29;
 color crimson=#B90202, resetDefaultInk=#FFFFFF;
 int appWidth, appHeight;
@@ -72,6 +74,7 @@ Boolean Redcontrol=false;
 Boolean Bluecontrol=false;
 Boolean Greencontrol=false;
 Boolean SnowFall=false;
+Boolean ExitConfirmation=false;
 void setup() {
   //
   int hourNightMode = hour();
@@ -270,6 +273,8 @@ void draw() {
   text(Initials, xRectTree, yRectTree, widthRectTree, heightRectTree);
   fill(resetDefaultInk);
   //
+  if (ExitConfirmation==true) ExitConfirmation ();
+  //
 } //End draw
 //
 void keyPressed() {
@@ -325,7 +330,7 @@ void keyPressed() {
 void mousePressed() {
   println("Mouse X: ", mouseX, "Mouse Y: ", mouseY);
   //
-  if ( mouseX>xRectQuit && mouseX<xRectQuit+widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+heightRectQuit ) exit();
+  if ( mouseX>xRectQuit && mouseX<xRectQuit+widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+heightRectQuit ) exit(); //ExitConfirmation=true;
   if ( mouseX>xClame && mouseX<xClame+widthClame && mouseY>yClame && mouseY<yClame+heightClame) println("clamed");
   if ( mouseX>xRectCard1 && mouseX<xRectCard1+widthRectCard1 && mouseY>yRectCard1 && mouseY<yRectCard1+heightRectCard1) println("Returned");
   //
