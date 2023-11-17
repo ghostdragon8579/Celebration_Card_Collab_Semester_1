@@ -32,7 +32,7 @@ void ExitConfirmation () {
   text(No, xConfirmationNo, yConfirmationNo, widthConfirmationNo, heightConfirmationNo);
   fill(resetDefaultInk);
   //
-  fill(DarkGreen);
+  fill(Black);
   textAlign(CENTER, CENTER); 
   size = 50;
   textFont(QuestionFont, 40); 
