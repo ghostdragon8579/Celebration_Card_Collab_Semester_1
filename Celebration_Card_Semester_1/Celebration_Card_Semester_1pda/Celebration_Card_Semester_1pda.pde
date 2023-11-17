@@ -116,7 +116,7 @@ void setup() {
   String nextImage = "next.png";
   String christmastreeImage = "Christmas Tree.jpg";
   //
-   ConfirmationBackgroundx = appWidth*0;
+  ConfirmationBackgroundx = appWidth*0;
   ConfirmationBackgroundy = appHeight*0;
   ConfirmationBackgroundwidth = appWidth-1;
   ConfirmationBackgroundheight = appHeight-1;
