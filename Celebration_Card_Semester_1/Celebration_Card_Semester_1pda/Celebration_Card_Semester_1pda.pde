@@ -225,9 +225,7 @@ void setup() {
   rect(xRectinitials, yRectinitials, widthRectinitials, heightRectinitials);
   rect(xClameOutline, yClameOutline, widthClameOutline, heightClameOutline);
   rect(xClame, yClame, widthClame, heightClame);
-  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   line(xRectLine1, yRectLine1, widthRectLine1, heightRectLine1);
-  image(rectTree, xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   //
   IntroductionFont = createFont("Comic Sans MS", 55);
   InitialFont = createFont("Papyrus", 55);

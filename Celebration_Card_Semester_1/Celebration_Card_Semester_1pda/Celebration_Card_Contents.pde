@@ -1,5 +1,6 @@
 void CardContents () {
   //
+  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   rect(xClame, yClame, widthClame, heightClame);
   rect(xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
@@ -36,6 +37,7 @@ void CardContents () {
   } else {
   }
   //
+  image(rectTree, xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   color SnowFallcolor = color(255, 255, 255);
   int smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
   fill(SnowFallcolor);
