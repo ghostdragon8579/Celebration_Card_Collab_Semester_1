@@ -12,6 +12,7 @@ String Initials = "Eric Barnes";
 String Yes = "Yes";
 String No = "No";
 String Question = "Are you sure you want to quit?";
+color Gray=#AFAFAF;
 color Black=#000000;
 color Green=#00DE01;
 color Red=#DE001E;
