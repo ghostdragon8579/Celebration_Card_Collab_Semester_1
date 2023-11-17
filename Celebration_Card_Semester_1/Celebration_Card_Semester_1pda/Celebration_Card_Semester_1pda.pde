@@ -8,8 +8,6 @@ PFont IntroductionFont;
 PFont InitialFont;
 String Introduction = "Merry Christmas!";
 String Initials = "Eric Barnes";
-String Yes = "Yes";
-String No = "No";
 color pine=#00AA29;
 color crimson=#B90202;
 color resetDefaultInk=#FFFFFF;
