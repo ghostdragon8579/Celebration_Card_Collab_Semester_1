@@ -6,8 +6,16 @@ PImage rectReturn;
 PImage rectSnowGlobe;
 PFont IntroductionFont;
 PFont InitialFont;
+PFont QuestionFont;
 String Introduction = "Merry Christmas!";
 String Initials = "Eric Barnes";
+String Yes = "Yes";
+String No = "No";
+String Question = "Are you sure you want to quit?";
+color Green=#00DE01;
+color Red=#DE001E;
+color DarkGreen=#02B703;
+color DarkRed=#AA021B;
 color pine=#00AA29;
 color crimson=#B90202;
 color resetDefaultInk=#FFFFFF;
@@ -67,6 +75,10 @@ float xRectinitials, yRectinitials, widthRectinitials, heightRectinitials;
 float xClame, yClame, widthClame, heightClame;
 float xClameOutline, yClameOutline, widthClameOutline, heightClameOutline;
 float xSnowFall, ySnowFall, SnowFallDiameter;
+float ConfirmationBackgroundx, ConfirmationBackgroundy, ConfirmationBackgroundwidth, ConfirmationBackgroundheight;
+float xConfirmationYes, yConfirmationYes, widthConfirmationYes, heightConfirmationYes;
+float xConfirmationNo, yConfirmationNo, widthConfirmationNo, heightConfirmationNo;
+float xConfirmationQuestion, yConfirmationQuestion, widthConfirmationQuestion, heightConfirmationQuestion;
 Boolean brightnessControl=false;
 Boolean nightmode=false;
 Boolean Redcontrol=false;
@@ -102,6 +114,31 @@ void setup() {
   String nextImage = "next.png";
   String christmastreeImage = "Christmas Tree.jpg";
   //
+   ConfirmationBackgroundx = appWidth*0;
+  ConfirmationBackgroundy = appHeight*0;
+  ConfirmationBackgroundwidth = appWidth-1;
+  ConfirmationBackgroundheight = appHeight-1;
+  //
+  xConfirmationYes = appWidth*1/4;
+  yConfirmationYes = appHeight*3/7;
+  widthConfirmationYes = appWidth*1/7;
+  heightConfirmationYes = appHeight*2/11;
+  //
+  xConfirmationNo = appWidth*3/5;
+  yConfirmationNo = yConfirmationYes;
+  widthConfirmationNo = appWidth*1/7;
+  heightConfirmationNo = heightConfirmationYes;
+  //
+  xConfirmationQuestion = appWidth*1/4;
+  yConfirmationQuestion = appHeight*1/6;
+  widthConfirmationQuestion = appWidth*1/2;
+  heightConfirmationQuestion = appHeight*2/13;
+  //
+  xRectSnowGlobe = appWidth*3/8;
+  yRectSnowGlobe = appHeight*7/12;
+  widthRectSnowGlobe = appWidth*6/8;
+  heightRectSnowGlobe = appHeight*3/8;
+  //
   xRectIntroduction = appWidth*1/4;
   yRectIntroduction = appHeight*1/6;
   widthRectIntroduction = appWidth*1/2;
@@ -123,7 +160,7 @@ void setup() {
   heightRectCard1 = appHeight*1/12;
   rectReturn = loadImage(imagesPath + Imagefolder + open + menuImage);
   //
-  xRectQuit = appWidth*18/20+20;
+  xRectQuit = appWidth*23/25;
   yRectQuit = appHeight*0/20;
   widthRectQuit = appWidth*1/12;
   heightRectQuit = appHeight*1/12;
@@ -140,11 +177,6 @@ void setup() {
   widthRectTree = appWidth*1/2;
   heightRectTree = appHeight*2/5;
   rectTree = loadImage(imagesPath + Imagefolder + open + christmastreeImage);
-  //
-  xRectSnowGlobe = appWidth*3/8;
-  yRectSnowGlobe = appHeight*7/12;
-  widthRectSnowGlobe = appWidth*6/8;
-  heightRectSnowGlobe = appHeight*3/8;
   //
   //circle(500, 400, 800);
   rect(xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
@@ -199,6 +231,8 @@ void setup() {
   //
   IntroductionFont = createFont("Comic Sans MS", 55);
   InitialFont = createFont("Papyrus", 55);
+  QuestionFont = createFont("Arial", 55);
+  //
   } //End setup
   //
 void draw() {
