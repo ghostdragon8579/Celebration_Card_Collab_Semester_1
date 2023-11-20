@@ -295,10 +295,10 @@ void keyPressed() {
 void mousePressed() {
   println("Mouse X: ", mouseX, "Mouse Y: ", mouseY);
   //
-  if ( mouseX>xRectQuit && mouseX<xRectQuit+widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+heightRectQuit ) ExitConfirmation=true;
-  if ( mouseX>xConfirmationNo && mouseX<xConfirmationNo+widthConfirmationNo && mouseY>yConfirmationNo && mouseY<yConfirmationNo+heightConfirmationNo ) ExitConfirmation=false;
-  if ( mouseX>xClame && mouseX<xClame+widthClame && mouseY>yClame && mouseY<yClame+heightClame) println("clamed");
-  if ( mouseX>xRectCard1 && mouseX<xRectCard1+widthRectCard1 && mouseY>yRectCard1 && mouseY<yRectCard1+heightRectCard1) println("Returned");
+  if (mouseX>xRectQuit && mouseX<xRectQuit+widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+heightRectQuit) ExitConfirmation=true;
+  if (mouseX>xConfirmationNo && mouseX<xConfirmationNo+widthConfirmationNo && mouseY>yConfirmationNo && mouseY<yConfirmationNo+heightConfirmationNo) ExitConfirmation=false;
+  if (mouseX>xClame && mouseX<xClame+widthClame && mouseY>yClame && mouseY<yClame+heightClame) println("clamed");
+  if (mouseX>xRectCard1 && mouseX<xRectCard1+widthRectCard1 && mouseY>yRectCard1 && mouseY<yRectCard1+heightRectCard1) println("Returned");
   if (mouseX>xConfirmationYes && mouseX<xConfirmationYes+widthConfirmationYes && mouseY>yConfirmationYes && mouseY<yConfirmationYes+heightConfirmationYes) exit();
   //
 } //End mousePressed

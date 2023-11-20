@@ -66,7 +66,7 @@ void CardContents () {
   //
   fill(crimson);
   textAlign(CENTER, CENTER); 
-  size = 80;
+  size = 50;
   textFont(InitialFont, 50); 
   text(Initials, xRectTree, yRectTree, widthRectTree, heightRectTree);
   fill(resetDefaultInk);
