@@ -105,8 +105,8 @@ void setup() {
   //
   //fullScreen();
   size(1000, 800);
- int appWidth = width;
- int appHeight = height;
+  int appWidth = width;
+  int appHeight = height;
   //
   String open = "/";
   String imagesPath = open;
