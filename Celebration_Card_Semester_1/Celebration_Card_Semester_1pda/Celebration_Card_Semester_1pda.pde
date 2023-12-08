@@ -108,9 +108,10 @@ void setup() {
   int appWidth = width;
   int appHeight = height;
   //
+  String up = "..";
   String open = "/";
-  String imagesPath = open;
-  String Imagefolder = "Images for the Celebration Card";
+  String imagesPath = up + open + up + open + up + open + up + open;
+  String Imagefolder = "Images";
   String menuImage = "menu.png";
   String exitImage = "exet.png";
   String nextImage = "next.png";
