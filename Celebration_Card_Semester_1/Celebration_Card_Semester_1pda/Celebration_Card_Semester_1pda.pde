@@ -4,6 +4,8 @@ PImage rectClame;
 PImage rectTree;
 PImage rectReturn;
 PImage rectSnowGlobe;
+PImage FrontImage;
+PImage FrontBackgroundImage;
 PFont IntroductionFont;
 PFont InitialFont;
 PFont QuestionFont;
@@ -12,6 +14,8 @@ String Initials = "Eric Barnes";
 String Yes = "Yes";
 String No = "No";
 String Question = "Are you sure you want to quit?";
+String Greetings = "Happy Holidays!";
+String OpenQuestion = "Open";
 color Gray=#AFAFAF;
 color Black=#000000;
 color Green=#00DE01;
@@ -81,6 +85,11 @@ float ConfirmationBackgroundx, ConfirmationBackgroundy, ConfirmationBackgroundwi
 float xConfirmationYes, yConfirmationYes, widthConfirmationYes, heightConfirmationYes;
 float xConfirmationNo, yConfirmationNo, widthConfirmationNo, heightConfirmationNo;
 float xConfirmationQuestion, yConfirmationQuestion, widthConfirmationQuestion, heightConfirmationQuestion;
+float xFrontDeadSpace, yFrontDeadSpace, widthFrontDeadSpace, heightFrontDeadSpace;
+float xFrontBackground, yFrontBackground, widthFrontBackground, heightFrontBackground;
+float xFrontText, yFrontText, widthFrontText, heightFrontText;
+float xFrontImage, yFrontImage, widthFrontImage, heightFrontImage;
+float xOpenCard, yOpenCard, widthOpenCard, heightOpenCard;
 Boolean brightnessControl=false;
 Boolean nightmode=false;
 Boolean Redcontrol=false;
@@ -88,6 +97,7 @@ Boolean Bluecontrol=false;
 Boolean Greencontrol=false;
 Boolean SnowFall=false;
 Boolean ExitConfirmation=false;
+Boolean CardFront=true;
 void setup() {
   //
   int hourNightMode = hour();
@@ -110,12 +120,13 @@ void setup() {
   //
   String up = "..";
   String open = "/";
-  String imagesPath = up + open + up + open + up + open + up + open;
+  String ImagesPath = up + open + up + open;
   String Imagefolder = "Images";
   String menuImage = "menu.png";
   String exitImage = "exet.png";
   String nextImage = "next.png";
   String christmastreeImage = "Christmas Tree.jpg";
+  String ImageUsed = "Santa.jpg";
   //
   ConfirmationBackgroundx = appWidth*0;
   ConfirmationBackgroundy = appHeight*0;
@@ -161,25 +172,53 @@ void setup() {
   yRectCard1 = appHeight*0/20;
   widthRectCard1 = appWidth*1/12;
   heightRectCard1 = appHeight*1/12;
-  rectReturn = loadImage(imagesPath + Imagefolder + open + menuImage);
   //
   xRectQuit = appWidth*23/25;
   yRectQuit = appHeight*0/20;
   widthRectQuit = appWidth*1/12;
   heightRectQuit = appHeight*1/12;
-  rectQuit = loadImage(imagesPath + Imagefolder + open + exitImage);
   //
   xClame = appWidth*3/8;
   yClame = appHeight*3/4;
   widthClame = appWidth*1/4;
   heightClame = appHeight*1/8;
-  rectClame = loadImage(imagesPath + Imagefolder + open + nextImage);
   //
   xRectTree = appWidth*1/4;
   yRectTree = appHeight*1/3;
   widthRectTree = appWidth*1/2;
   heightRectTree = appHeight*2/5;
-  rectTree = loadImage(imagesPath + Imagefolder + open + christmastreeImage);
+  //
+  xFrontDeadSpace = appWidth*0;
+  yFrontDeadSpace = appHeight*0;
+  widthFrontDeadSpace = appWidth-1;
+  heightFrontDeadSpace = appHeight-1;
+  //
+  xFrontBackground = appWidth*1/4;
+  yFrontBackground = yFrontDeadSpace;
+  widthFrontBackground = appWidth*2/4;
+  heightFrontBackground = heightFrontDeadSpace;
+  //
+  xFrontText = appWidth*1/3;
+  yFrontText = appHeight*3/5;
+  widthFrontText = appWidth*1/3;
+  heightFrontText = appHeight*1/5;
+  //
+  xOpenCard = appWidth*2/5;
+  yOpenCard = appHeight*10/12;
+  widthOpenCard = appWidth*1/5;
+  heightOpenCard = appHeight*1/10;
+  //
+  xFrontImage = xFrontText;
+  yFrontImage = appHeight*1/20;
+  widthFrontImage = widthFrontText;
+  heightFrontImage = appHeight*1/2;
+  //
+  rectReturn = loadImage(ImagesPath + Imagefolder + open + menuImage);
+  rectQuit = loadImage(ImagesPath + Imagefolder + open + exitImage);
+  rectClame = loadImage(ImagesPath + Imagefolder + open + nextImage);
+  FrontBackgroundImage = loadImage(ImagesPath + Imagefolder + open + christmastreeImage);
+  FrontImage = loadImage(ImagesPath + Imagefolder + open + ImageUsed);
+  rectTree = loadImage(ImagesPath + Imagefolder + open + christmastreeImage);
   //
   //circle(500, 400, 800);
   rect(xRectCard1, yRectCard1, widthRectCard1, heightRectCard1);
@@ -238,8 +277,9 @@ void setup() {
   //
 void draw() {
   //
-  if (ExitConfirmation==true) ExitConfirmation ();
-  if (ExitConfirmation==false) CardContents ();
+  if (ExitConfirmation==true && CardFront==false) ExitConfirmation ();
+  if (ExitConfirmation==false && CardFront==false) CardContents ();
+  if (ExitConfirmation==false && CardFront==true) CardFront ();
   //
 } //End draw
 //
@@ -299,7 +339,8 @@ void mousePressed() {
   if (mouseX>xRectQuit && mouseX<xRectQuit+widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+heightRectQuit) ExitConfirmation=true;
   if (mouseX>xConfirmationNo && mouseX<xConfirmationNo+widthConfirmationNo && mouseY>yConfirmationNo && mouseY<yConfirmationNo+heightConfirmationNo) ExitConfirmation=false;
   if (mouseX>xClame && mouseX<xClame+widthClame && mouseY>yClame && mouseY<yClame+heightClame) println("clamed");
-  if (mouseX>xRectCard1 && mouseX<xRectCard1+widthRectCard1 && mouseY>yRectCard1 && mouseY<yRectCard1+heightRectCard1) println("Returned");
+  if (mouseX>xOpenCard && mouseX<xOpenCard+widthOpenCard && mouseY>yOpenCard && mouseY<yOpenCard+heightOpenCard) CardFront=false;
+  if (mouseX>xRectCard1 && mouseX<xRectCard1+widthRectCard1 && mouseY>yRectCard1 && mouseY<yRectCard1+heightRectCard1) CardFront=true;
   if (mouseX>xConfirmationYes && mouseX<xConfirmationYes+widthConfirmationYes && mouseY>yConfirmationYes && mouseY<yConfirmationYes+heightConfirmationYes) exit();
   //
 } //End mousePressed
